@@ -7,7 +7,7 @@ comments: true
 
 This is a collection of some personal projects I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
 
-I'm also **available for consulting**, so feel free to [contact me](/contact) if it looks like we could work together. 
+I'm also **available for consulting**, so feel free to [contact me](/aboutme/#contact) if it looks like we could work together. 
 
 
 ---
