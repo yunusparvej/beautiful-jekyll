@@ -1,0 +1,21 @@
+---
+layout: post
+title: SwiftCloud system 
+tags: [random, exciting-stuff]
+---
+
+SwiftCloud  is a distributed object store designed for a high number of replicas. SwiftCloud structures the database into smaller CRDT objects, which allows it to provide partial client replica.Client replicas can offer higher responsiveness on cached objects, instead of directing all operations to the server side.
+
+It efficiently ensures consistent, available, and convergent access to client nodes, tolerating failures.To enable both small metadata and fault tolerance, SwiftCloud uses a flexible client-server topology, and decouples reads from writes. The client writes fast into the local cache, and reads in the past (also fast) data that is consistent, but occasionally stale.
+
+SwiftCloud allows applications to run transactions in the client machine, for common operations that access a limited set of objects, or in the DC, for transactions that require strong consistency or accessing a large number of objects
+It proposes a novel client-assisted failover mechanism that trades latency by a small increase in staleness.
+SwiftCloud [@Preguica2014] is a data storage system for cloud platforms that spans both client nodes and data center servers (**DCs**), as illustrated in Figure 1. The core of the system consists of a set of data centres (DCs) that replicate every object. At the periphery, client nodes cache a subset of the objects. The core of the system consists of a set of data centers (DCs) that replicate every object. The applications running in client nodes access the system through a local module called scout. A scout caches a subset of the objects. If the appropriate objects are in cache, responsiveness is improved and a client node supports disconnected operation.  
+
+ ```{r fig.width=5, fig.height=5, fig.cap ="SwiftCloud - Fault-tolerant geo-replication integrated all the way to the client machine.[Source [@Preguica2014]]" , echo=FALSE}
+ library(png)
+ library(grid)
+ img <- readPNG("../images/swiftcloud2.png")
+ grid.raster(img)
+```  
+
